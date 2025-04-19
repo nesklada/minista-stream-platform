@@ -1,0 +1,7 @@
+{
+  "compiilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

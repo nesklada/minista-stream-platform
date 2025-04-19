@@ -1,1 +1,1 @@
-# minista-stream-platform
+# manista-movies

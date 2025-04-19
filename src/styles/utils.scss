@@ -1,0 +1,36 @@
+.container {
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.hidden-mobile-s {
+  @include mobile-s {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include tablet {
+    display: none !important;
+  }
+}
+
+.hidden-laptop {
+  @include laptop {
+    display: none !important;
+  }
+}
+
+.hidden-desktop {
+  @include desktop {
+    display: none !important;
+  }
+}
