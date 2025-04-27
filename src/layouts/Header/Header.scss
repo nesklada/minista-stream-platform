@@ -1,0 +1,106 @@
+@mixin header-menu-desktop {
+    @include tablet {
+        @content;
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    padding: fluid(14, 22) 0;
+    width: 100%;
+    color: var(--color-white);
+
+    &-inner {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-actions {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+        padding: 50px fluid(8, 10) 20px;
+        width: calc(100% - 30px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: fluid(16, 30);
+        align-items: center;
+        font-size: fluid(14, 18);
+        color: var(--color-gray-75);
+        background: var(--color-black-06);
+        overflow-y: auto;
+
+        .header-menu-opened & {
+            transform: translateX(0);
+
+            @include header-menu-desktop {
+                transform: translate(0);
+            }
+        }
+
+        @include window-loaded {
+            transition: 0.5s linear;
+            transition-property: transform;
+        }
+
+        @include header-menu-desktop {
+            position: static;
+            transform: translate(0);
+            padding: fluid(8, 10);
+            width: auto;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border: fluid(3, 4) solid var(--color-black-12);
+            border-radius: fluid(10, 12);
+            text-align: center;
+            background: var(--color-black-06);
+        }
+
+        &-toggler,
+        &-close {
+            border: 3px solid var(--color-black-15);
+            background: var(--color-black-10);
+        }
+
+        &-close {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
+    }
+
+    &-link {
+        padding: fluid(12, 14) fluid(20, 24);
+
+        @include header-menu-desktop {
+            padding: 0;
+        }
+
+        &:last-child:not(.is-active) {
+            margin-right: fluid(16, 30);
+        }
+
+        &.is-active {
+            padding: fluid(12, 14) fluid(20, 24);
+            border-radius: 8px;
+            color: var(--color-white);
+            background: var(--color-black-10);
+            pointer-events: none;
+        }
+    }
+}

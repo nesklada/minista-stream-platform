@@ -1,0 +1,40 @@
+.btn {
+    padding: fluid(15, 18) 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    font-size: fluid(14, 18);
+    font-weight: 600;
+    color: var(--color-white);
+    background: var(--color-red-45);
+    user-select: none;
+    fill: currentColor;
+    stroke: currentColor;
+
+    @include hover {
+        filter: brightness(1.1);
+    }
+
+    &:active {
+        transition: 0s;
+        filter: brightness(0.8);
+    }
+}
+
+.btn-reset,
+.btn-icon {
+    padding: 0;
+    color: inherit;
+    background: none;
+}
+
+.btn-icon {
+    min-width: 48px;
+    min-height: 48px;
+
+    @include hover {
+        color: var(--color-red-45);
+    }
+}

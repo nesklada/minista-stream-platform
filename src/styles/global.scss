@@ -1,26 +1,30 @@
+* {
+    margin: 0;
+}
+
 html {
-  &.is-lock {
-    overflow: hidden;
-  }
+    &.is-lock {
+        overflow: hidden;
+    }
 }
 
 body {
-  font-family: var(--font-family-base);
-  font-size: fluid(14, 18);
-  color: var(--color-gray-60);
-  line-height: 1.5;
-  background-color: var(--color-black-08);
+    font-family: var(--font-family-base);
+    font-size: fluid(14, 18);
+    color: var(--color-gray-60);
+    line-height: 1.5;
+    background-color: var(--color-black-08);
 }
 
 .wrapper-page {
-  min-height: 100vh;
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-page {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 h1,
@@ -35,56 +39,70 @@ h5,
 .h5,
 h6,
 .h6 {
-  font-weight: 700;
-  color: var(--color-white);
+    font-weight: 700;
+    color: var(--color-white);
 }
 
 h1,
 .h1 {
-  font-size: fluid(28, 58);
+    margin-bottom: fluid(10, 14);
+    font-size: fluid(28, 58);
 }
 
 h2,
 .h2 {
-  font-size: fluid(24, 48);
+    font-size: fluid(24, 48);
 }
 
 h3,
 .h3 {
-  font-size: fluid(20, 38);
+    font-size: fluid(20, 38);
 }
 
 h4,
 .h4 {
-  font-size: fluid(18, 24);
-  font-weight: 600;
+    font-size: fluid(18, 24);
+    font-weight: 600;
 }
 
 h5,
 .h5 {
-  font-size: fluid(18, 22);
-  font-weight: 500;
+    font-size: fluid(18, 22);
+    font-weight: 500;
 }
 
 h5,
 .h5 {
-  font-size: fluid(16, 20);
-  font-weight: 600;
+    font-size: fluid(16, 20);
+    font-weight: 600;
 }
 
 a,
 button {
-  transition: var(--transition-duration) ease-in-out;
+    user-select: none;
+
+    body.is-loaded & {
+        transition: var(--transition-duration) ease-in-out;
+    }
 }
 
 a {
-  color: inherit;
+    color: inherit;
 
-  @include hover {
-    color: var(--color-red-45);
-  }
+    @include hover {
+        color: var(--color-red-45);
+    }
 
-  &[class] {
-    text-decoration: none;
-  }
+    &[class] {
+        text-decoration: none;
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+:last-child {
+    margin-bottom: 0;
 }
