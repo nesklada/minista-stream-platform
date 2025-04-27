@@ -1,3 +1,5 @@
+import Entry from "@/sections/Entry/Entry";
+
 export const metadata = {
   title: "Index page",
   description: "Description of Index page",
@@ -6,9 +8,7 @@ export const metadata = {
 export default function () {
   return (
     <>
-      <div className="container">
-        <h1>Index page</h1>
-      </div>
+      <Entry></Entry>
     </>
   );
 }
