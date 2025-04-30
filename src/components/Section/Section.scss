@@ -4,6 +4,18 @@
 
     &-header {
         margin-bottom: fluid(40, 80);
+
+        &-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            @include tablet {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
     }
 
     &-title {

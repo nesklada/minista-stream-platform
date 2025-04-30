@@ -10,6 +10,8 @@ export default function Section({ className, children }) {
 }
 
 export function SectionHeader({ className, children, isGrid }) {
+    const Wrapper = isGrid ? "div" : <></>;
+
     return (
         <div
             className={classNames(className, "section-header", {

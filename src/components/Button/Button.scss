@@ -22,6 +22,10 @@
         transition: 0s;
         filter: brightness(0.8);
     }
+
+    &.is-nowrap {
+        white-space: nowrap;
+    }
 }
 
 .btn-reset,

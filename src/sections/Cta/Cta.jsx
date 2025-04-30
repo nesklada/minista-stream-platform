@@ -14,7 +14,7 @@ export default function Cta({
                     <p>{description}</p>
                 </div>
 
-                <Button className={"cta-btn"} href={href}>
+                <Button href={href} isNowrap>
                     Start a Free Trail
                 </Button>
             </div>
