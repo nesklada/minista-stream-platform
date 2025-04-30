@@ -1,4 +1,8 @@
 import Icon from "@/components/Icon/Icon";
+import Section, {
+    SectionHeader,
+    SectionTitle,
+} from "@/components/Section/Section";
 import "./Platforms.scss";
 
 export default function () {
@@ -42,17 +46,17 @@ export default function () {
     ];
 
     return (
-        <section className="container platforms">
-            <div className="platforms-header">
-                <h2 className="h3 platforms-title">
+        <Section className="container platforms">
+            <SectionHeader>
+                <SectionTitle className="h3">
                     We Provide you streaming experience across various devices.
-                </h2>
+                </SectionTitle>
 
                 <p>
                     With StreamVibe, you can enjoy your favorite movies and TV
                     shows anytime, anywhere.
                 </p>
-            </div>
+            </SectionHeader>
 
             <div className="platforms-cards">
                 {platforms.map(({ icon, title, description }, index) => (
@@ -64,7 +68,7 @@ export default function () {
                     />
                 ))}
             </div>
-        </section>
+        </Section>
     );
 }
 

@@ -1,22 +1,13 @@
 .platforms {
-    &-header {
-        margin-bottom: fluid(40, 80);
-    }
-
-    &-title {
-        margin-bottom: 10px;
-        color: var(--color-white);
-
-        @include desktop {
-            margin-bottom: 14px;
-        }
-    }
-
     &-cards {
         display: flex;
         flex-wrap: wrap;
         gap: fluid-from-laptop(20, 30);
         justify-content: center;
+
+        @include tablet {
+            justify-content: flex-start;
+        }
 
         .platform-card {
             @include tablet {
