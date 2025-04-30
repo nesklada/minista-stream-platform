@@ -1,29 +1,42 @@
 @use "constants" as *;
 @use "sass:math";
 
-@function fluid($min: 10, $max: 100, $isEndOfLaptop: false) {
-  $maxViewportWidth: $container-desktop-width;
-  $minViewportWidth: 390;
+@function fluid(
+    $min: 10,
+    $max: 100,
+    $isFromOfLaptop: false,
+    $isEndOfLaptop: false
+) {
+    $maxViewportWidth: $container-desktop-width;
+    $minViewportWidth: 390;
 
-  @if ($isEndOfLaptop) {
-    $minViewportWidth: $container-laptop-width;
-  }
+    @if ($isFromOfLaptop) {
+        $minViewportWidth: $container-laptop-width;
+    }
 
-  $maxSize: math.div($max, 16);
-  $minSize: math.div($min, 16);
-  $maxWidth: math.div($maxViewportWidth, 16);
-  $minWidth: math.div($minViewportWidth, 16);
+    @if ($isEndOfLaptop) {
+        $maxViewportWidth: calc($container-laptop-width + 1px);
+    }
 
-  $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
-  $yAxisIntersections: -$minWidth * $slope + $minSize;
+    $maxSize: math.div($max, 16);
+    $minSize: math.div($min, 16);
+    $maxWidth: math.div($maxViewportWidth, 16);
+    $minWidth: math.div($minViewportWidth, 16);
 
-  $start: #{$minSize * 1rem};
-  $middle: "calc(#{$yAxisIntersections}rem + #{($slope * 100)}vw)";
-  $end: #{$maxSize * 1rem};
+    $slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+    $yAxisIntersections: -$minWidth * $slope + $minSize;
 
-  @return clamp($start, #{$middle}, $end);
+    $start: #{$minSize * 1rem};
+    $middle: "calc(#{$yAxisIntersections}rem + #{($slope * 100)}vw)";
+    $end: #{$maxSize * 1rem};
+
+    @return clamp($start, #{$middle}, $end);
+}
+
+@function fluid-from-laptop($min: 10, $max: 100) {
+    @return fluid($min, $max, true);
 }
 
 @function fluid-to-laptop($min: 10, $max: 100) {
-  @return fluid($min, $max, true);
+    @return fluid($min, $max, false, true);
 }
