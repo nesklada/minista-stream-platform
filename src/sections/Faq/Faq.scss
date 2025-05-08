@@ -1,2 +1,21 @@
 .faq {
+    &-body {
+        --gap: #{fluid(40, 80)};
+
+        counter-reset: accordion-counter;
+        display: flex;
+        flex-direction: column;
+
+        @include laptop {
+            flex-direction: row;
+            flex-wrap: wrap;
+            column-gap: var(--gap);
+        }
+
+        .accordion-holder {
+            @include laptop {
+                width: calc(50% - (var(--gap) / 2));
+            }
+        }
+    }
 }
