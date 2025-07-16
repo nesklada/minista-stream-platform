@@ -1,0 +1,28 @@
+.switchers {
+    padding: fluid-from-laptop(8, 10);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-black-15);
+    border-radius: fluid-from-laptop(8, 10);
+    font-size: fluid(14, 18);
+    background: var(--color-black-06);
+
+    &-control {
+        padding: fluid-from-laptop(12, 14) fluid-from-laptop(20, 24);
+        border: 0;
+        color: var(--color-gray-60);
+        background: transparent;
+
+        @include hover {
+            color: var(--color-red-45);
+        }
+
+        &.is-active {
+            border-radius: 8px;
+            color: var(--color-white);
+            background: var(--color-black-10);
+            pointer-events: none;
+        }
+    }
+}

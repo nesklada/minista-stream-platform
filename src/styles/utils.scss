@@ -34,3 +34,27 @@
         display: none !important;
     }
 }
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}

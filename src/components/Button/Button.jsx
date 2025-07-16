@@ -19,9 +19,12 @@ export default function Button({ children, className, ...props }) {
     return (
         <Tag
             className={classNames(className, "btn", {
-                "btn-reset": props.isReset,
-                "btn-icon": props.isIcon,
+                "is-reset": props.isReset,
+                "is-icon": props.isIcon,
                 "is-nowrap": props.isNowrap,
+
+                "is-default": props.theme === "default",
+                "is-danger": !props.theme,
             })}
             {...specificAttr}
             aria-label={props["aria-label"] || props.title}

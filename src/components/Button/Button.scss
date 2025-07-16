@@ -7,15 +7,24 @@
     border-radius: 8px;
     font-size: fluid(14, 18);
     font-weight: 600;
-    color: var(--color-white);
-    background: var(--color-red-45);
     user-select: none;
     fill: currentColor;
     stroke: currentColor;
 
+    &.is-danger {
+        color: var(--color-white);
+        background: var(--color-red-45);
+    }
+
+    &.is-default {
+        border: 1px solid var(--color-black-15);
+        color: var(--color-white);
+        background: var(--color-black-08);
+    }
+
     @include hover {
         color: #fff;
-        filter: brightness(1.1);
+        filter: brightness(1.2);
     }
 
     &:active {
@@ -26,20 +35,20 @@
     &.is-nowrap {
         white-space: nowrap;
     }
-}
 
-.btn-reset,
-.btn-icon {
-    padding: 0;
-    color: inherit;
-    background: none;
-}
+    &.is-reset,
+    &.is-icon {
+        padding: 0;
+        color: inherit;
+        background: none;
+    }
 
-.btn-icon {
-    min-width: 48px;
-    min-height: 48px;
+    &.is-icon {
+        min-width: 48px;
+        min-height: 48px;
 
-    @include hover {
-        color: var(--color-red-45);
+        @include hover {
+            color: var(--color-red-45);
+        }
     }
 }

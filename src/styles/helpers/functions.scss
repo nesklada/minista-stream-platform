@@ -15,7 +15,7 @@
     }
 
     @if ($isEndOfLaptop) {
-        $maxViewportWidth: calc($container-laptop-width + 1px);
+        $maxViewportWidth: calc($container-laptop-width + 1);
     }
 
     $maxSize: math.div($max, 16);
